@@ -5,7 +5,10 @@ describe('Funcionalidade: Cadastro de Membros Incorretas', () => {
     cy.visit('/')
   });
   var email = `fabio${Date.now()}@teste.com`
-  
+
+  afterEach(() => {
+    cy.screenshot()
+  });
 
   it('Deve Fazer o Cadastro de Campos Obrigatórios em Branco', () => {
     cy.preencherCadastro(undefined, undefined, undefined, undefined, undefined, 'Nome não pode estar vazio')

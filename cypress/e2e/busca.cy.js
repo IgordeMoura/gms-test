@@ -5,6 +5,10 @@ describe('Funcionalidade: Busca Filme Corretamente', () => {
         cy.visit('/')
     });
 
+    afterEach(()=>{
+        cy.screenshot()
+    });
+
     it('Deve Buscar Filmes com Sucesso', () => {
         cy.get('#search-input').type('Jurassic Park')
         cy.get('#search-button').click()
